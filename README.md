@@ -37,5 +37,5 @@ This example shows how this plugin turn html into a ts file.
 
 *The generated output* : `my_template.html.ts`
 ```typescript
-module views { export var myTemplate = \`<p>A {{ handlebar }} example.</p>\`;}
+module views { export var myTemplate = `<p>A {{ handlebar }} example.</p>`;}
 ```
