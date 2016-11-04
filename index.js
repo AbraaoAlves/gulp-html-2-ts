@@ -44,7 +44,7 @@ function html2Ts(config){
 		}
 
 		var dirName = path.dirname(file.path);
-		var folderName = path.basename(dirName);
+		var folderName = camelize(path.basename(dirName));
 		var content = stripBOM(file.contents.toString());
 
 		content = param.tsTemplate

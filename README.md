@@ -20,7 +20,7 @@ gulp.task('template', function() {
 	.pipe(html2ts())
   //.pipe(html2ts('app'))
   //.pipe(html2ts({ moduleName: '{$folderName}', propertyName: '{$fileName}Html'}))
-	.pipe(gulp.dest('./')); 
+	.pipe(gulp.dest('./'));
 });
 
 ```
@@ -30,12 +30,12 @@ Example
 
 This example shows how this plugin turn html into a ts file.
 
-*HTML Source* : `mytemplate.html`
+*HTML Source* : `views/my_template.html`
 ```html
   <p>A {{ handlebar }} example.</p>
 ```
 
-*The generated output* : `mytemplate.html.ts`
+*The generated output* : `my_template.html.ts`
 ```typescript
-module mytemplate { export var html = '<p>A {{ handlebar }} example.</p>';}
+module views { export var myTemplate = '<p>A {{ handlebar }} example.</p>';}
 ```
