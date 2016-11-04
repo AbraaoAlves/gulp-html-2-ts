@@ -14,6 +14,14 @@ function stripBOM(str) {
         : str;
 }
 
+// Transforms string to camelcase, to save valid name variable
+function camelize(str) {
+  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(letter, index) {
+    return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+  }).replace(/[-._\s]+/g, '');
+}
+
+
 function html2Ts(config){
 	var param = {};
 	config = config || {};
@@ -29,7 +37,7 @@ function html2Ts(config){
 		}
 
 
-		var fileName = path.basename(file.path, param.fileSrcType);
+		var fileName = camelize(path.basename(file.path, param.fileSrcType));
 		if(!fileName){
 			this.emit('error', new PluginError(PLUGIN_NAME, 'file <'+ file.path +'> not converted!'));
 			return done();
