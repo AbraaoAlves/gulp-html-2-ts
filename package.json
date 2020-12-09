@@ -32,6 +32,6 @@
   },
   "homepage": "https://github.com/AbraaoAlves/gulp-html-to-ts",
   "devDependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^4.0.2"
   }
 }
